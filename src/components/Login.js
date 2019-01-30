@@ -20,7 +20,7 @@ class Login extends Component {
             <div className="center">
                 <div className="card">
                     <h1>Login</h1>
-                    <form>
+                    <form onSubmit={ this.handleFormSubmit }>
                         <input
                             className="form-item"
                             placeholder="Username goes here..."
@@ -56,7 +56,6 @@ class Login extends Component {
 
     handleFormSubmit(e){
         e.preventDefault();
-      
         this.Auth.login(this.state.username,this.state.password)
             .then(res =>{
                this.props.history.replace('/');
